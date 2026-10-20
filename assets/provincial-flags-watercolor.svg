@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1400" role="img" aria-label="Watercolour blend of the Newfoundland and Labrador, New Brunswick, and Saskatchewan provincial flags">
+  <defs>
+    <filter id="paper" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.045" numOctaves="3" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+      <feGaussianBlur in="rough" stdDeviation="1.4"/>
+    </filter>
+    <filter id="wash">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="4" seed="8" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="mono"/>
+      <feBlend in="SourceGraphic" in2="mono" mode="soft-light"/>
+    </filter>
+    <linearGradient id="leftFade" x1="0" x2="1">
+      <stop offset="0" stop-color="white"/>
+      <stop offset=".77" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="midFade" x1="0" x2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".18" stop-color="white"/>
+      <stop offset=".82" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rightFade" x1="0" x2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".23" stop-color="white"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <mask id="ml"><rect width="980" height="1400" fill="url(#leftFade)"/></mask>
+    <mask id="mm"><rect x="700" width="1000" height="1400" fill="url(#midFade)"/></mask>
+    <mask id="mr"><rect x="1420" width="980" height="1400" fill="url(#rightFade)"/></mask>
+    <linearGradient id="paperTint" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f1eadb" stop-opacity=".34"/>
+      <stop offset=".45" stop-color="#fffaf0" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#e9dfcb" stop-opacity=".28"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#wash)">
+    <!-- Newfoundland and Labrador -->
+    <g mask="url(#ml)" filter="url(#paper)" opacity=".83">
+      <rect width="980" height="1400" fill="#eeeade"/>
+      <polygon points="0,0 0,700 450,700" fill="#16467d"/>
+      <polygon points="0,1400 0,700 450,700" fill="#16467d"/>
+      <polygon points="560,230 925,75 690,570" fill="#b79234"/>
+      <polygon points="560,1170 925,1325 690,830" fill="#b79234"/>
+      <polygon points="470,700 925,285 925,575 760,700" fill="#b73338"/>
+      <polygon points="470,700 925,1115 925,825 760,700" fill="#b73338"/>
+      <polygon points="925,575 925,825 760,700" fill="#b73338"/>
+      <path d="M0 700H455" stroke="#f8f3e9" stroke-width="42"/>
+    </g>
+
+    <!-- New Brunswick -->
+    <g mask="url(#mm)" filter="url(#paper)" opacity=".8">
+      <rect x="700" width="1000" height="1400" fill="#d4a32f"/>
+      <rect x="700" width="1000" height="480" fill="#a92d31"/>
+      <!-- heraldic lion, softly simplified -->
+      <path d="M940 230c58-52 125-46 170-13 48-38 123-45 177 5l-34 37 56 43-64 18-32 73-68-19-52 39-62-34-80 13 14-68-53-40 58-22z" fill="#d9b44c" opacity=".92"/>
+      <!-- sailing ship -->
+      <path d="M955 1065h500l-83 92h-336z" fill="#2c2925" opacity=".84"/>
+      <path d="M1190 635v425M1208 690l190 304h-190zM1170 710l-164 284h164z" fill="#eee2c2" stroke="#2c2925" stroke-width="14" opacity=".88"/>
+      <path d="M985 1190c125-46 255 46 380 0 86-31 168 1 245 34" fill="none" stroke="#6b86a1" stroke-width="34" opacity=".58"/>
+    </g>
+
+    <!-- Saskatchewan -->
+    <g mask="url(#mr)" filter="url(#paper)" opacity=".82">
+      <rect x="1420" width="980" height="700" fill="#28664c"/>
+      <rect x="1420" y="700" width="980" height="700" fill="#d3b438"/>
+      <!-- provincial shield suggestion -->
+      <path d="M1580 185h240v285c0 110-54 180-120 223-66-43-120-113-120-223z" fill="#ddc14a" stroke="#efe2b8" stroke-width="14" opacity=".83"/>
+      <path d="M1580 185h240v125h-240z" fill="#a93c35" opacity=".9"/>
+      <path d="M1625 375h150M1625 435h150M1625 495h150" stroke="#2f5f47" stroke-width="20" opacity=".8"/>
+      <!-- western red lily -->
+      <g transform="translate(2070 620)" opacity=".86">
+        <path d="M0 0c-135-160-235-88-142 34C-276 1-306 116-160 119-238 224-130 274-50 143-6 319 112 286 74 130 196 234 281 134 148 83 280 13 212-95 79-17 131-181 8-210-27-40z" fill="#b33c32"/>
+        <circle cx="3" cy="54" r="38" fill="#c69e32"/>
+        <path d="M10 88c-18 148-64 252-127 350M-4 227c-72-20-122-66-153-126M-22 304c69-5 122-44 157-103" fill="none" stroke="#3d6848" stroke-width="18"/>
+      </g>
+    </g>
+  </g>
+
+  <rect width="2400" height="1400" fill="url(#paperTint)"/>
+  <g opacity=".16" filter="url(#paper)">
+    <path d="M0 198c390 52 603-92 1000 5s617-59 988-8 412 72 412 72v230H0z" fill="#fff"/>
+    <path d="M0 1138c357-70 612 83 987 8 403-81 641 66 958 1 195-40 333-21 455 15v238H0z" fill="#fff"/>
+  </g>
+</svg>
