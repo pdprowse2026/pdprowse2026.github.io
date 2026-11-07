@@ -644,7 +644,7 @@
         </div>
         <div class="cover-fan" aria-label="The five books in the Reflections Series">
           <a href="#book-one" aria-label="Go to Reflections of a Rocking Chair"><img src="assets/book-1.jpg" alt="Cover of Reflections of a Rocking Chair" /></a>
-          <a href="#book-two" aria-label="Go to Reflections of a Satin Shirt"><img src="assets/book-2.jpg" alt="Cover of Reflections of a Satin Shirt" /><span class="cover-ribbon cover-ribbon-pulse">Coming Soon</span></a>
+          <a href="#book-two" aria-label="Go to Reflections of a Satin Shirt"><img src="assets/book-2.jpg" alt="Cover of Reflections of a Satin Shirt" /><span class="cover-ribbon cover-ribbon-pulse">Available Now</span></a>
           <a href="#book-three" aria-label="Go to Reflections of a Wooden Desk"><img src="assets/book-3.jpg" alt="Cover of Reflections of a Wooden Desk" /><span class="cover-ribbon">Coming Soon</span></a>
           <a href="#book-four" aria-label="Go to Reflections of a Silent House"><img src="assets/book-4.jpg" alt="Cover of Reflections of a Silent House" /><span class="cover-ribbon">Coming Soon</span></a>
           <a href="#book-five" aria-label="Go to Reflections of a Pocket Watch"><img src="assets/book-5.jpg" alt="Cover of Reflections of a Pocket Watch" /><span class="cover-ribbon">Coming Soon</span></a>
@@ -737,13 +737,14 @@
       </article>
 
       <article class="book" id="book-two">
-        <div class="book-cover"><div class="cover-frame"><img src="assets/book-2.jpg" loading="lazy" decoding="async" alt="Reflections of a Satin Shirt book cover" /><span class="cover-ribbon cover-ribbon-pulse">Coming Soon</span></div></div>
+        <div class="book-cover"><div class="cover-frame"><img src="assets/book-2.jpg" loading="lazy" decoding="async" alt="Reflections of a Satin Shirt book cover" /><span class="cover-ribbon cover-ribbon-pulse">Available Now</span></div></div>
         <div class="book-details">
           <p class="book-number">Book two</p>
           <h3><span>Reflections of a</span> Satin Shirt</h3>
           <p class="book-copy">Holly, the girl found beside a highway longing for a simple satin shirt, learns that being rescued is only the beginning of being healed.</p>
           <p class="object-line">The satin shirt</p>
-          <p class="coming-soon">Coming Soon</p>
+          <a class="buy-amazon" id="buy-amazon-book-two" href="https://books2read.com/u/m2p9PG"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.2 2H1.6A.6.6 0 0 0 1 2.6v1.1c0 .33.27.6.6.6h1.32l2.3 11.1a1.8 1.8 0 0 0 1.77 1.44h9.6a1.8 1.8 0 0 0 1.77-1.32L20.4 6.6a.6.6 0 0 0-.58-.73H5.55l-.5-2.42A.6.6 0 0 0 4.47 3H3.2V2Z"/></svg><span>Buy on Amazon</span></a>
+          <p class="buy-note">Available now in ebook and paperback</p>
 
           <div class="readings" aria-label="Listen to the author read a teaser from Reflections of a Satin Shirt">
             <p class="readings-title"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10v4h4l5 5V5L7 10H3Zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4ZM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6Z"/></svg><span>Hear a teaser</span></p>
@@ -1749,8 +1750,8 @@
       window.addEventListener("hashchange", route);
       route();
 
-      var buyButton = document.getElementById("buy-amazon");
-      if (buyButton) {
+      var buyButtons = document.querySelectorAll(".buy-amazon");
+      Array.prototype.forEach.call(buyButtons, function (buyButton) {
         buyButton.addEventListener("click", function (event) {
           // Inside a frame (e.g. the artifact viewer), open Amazon in a new
           // tab so it doesn't render blocked inside the frame. Everywhere
@@ -1761,7 +1762,7 @@
             window.open(buyButton.href, "_blank", "noopener,noreferrer");
           }
         });
-      }
+      });
 
       var authorAmazon = document.getElementById("author-amazon");
       if (authorAmazon) {
